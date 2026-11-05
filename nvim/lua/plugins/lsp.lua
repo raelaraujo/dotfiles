@@ -40,6 +40,7 @@ return {
                     "bashls",
                     "yamlls",
                     "texlab",
+                    -- "markdownlint-cli12",
                 }, -- Example LSPs to install
             },
         },

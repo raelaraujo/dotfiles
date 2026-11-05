@@ -19,7 +19,7 @@ return {
         require("monokai-pro").setup({
           override = function(scheme)
             return {
-              Normal         = { bg = "#181818" },
+              -- Normal         = { bg = "#181818" },
               texCmd         = { fg = "#65bc6c" },
               texDelim       = { fg = "#e5487a" },
               texEnvArgName  = { fg = "#fd9353" },

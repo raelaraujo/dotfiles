@@ -3,39 +3,28 @@ return {
         "nvim-treesitter/nvim-treesitter",
         branch = "master",
         build = ":TSUpdate",
+
         dependencies = {
             "nvim-treesitter/nvim-treesitter-textobjects",
+            "windwp/nvim-ts-autotag",
         },
+
         config = function()
-            local configs = require("nvim-treesitter.configs")
-            ---@diagnostic disable-next-line: missing-fields
-            configs.setup({
-                textobjects = {
-                    select = {
-                        enable = true,
-                        lookahead = true,
-                        keymaps = {
-                            ["af"] = "@function.outer",
-                            ["if"] = "@function.inner",
-                        },
-                    },
-                },
-                highlight = {
-                    enable = true,
-                },
-                indent = { enable = true },
-                autotag = { enable = true },
+            require("nvim-treesitter.configs").setup({
+
+                -- Parsers
                 ensure_installed = {
                     "json",
                     "python",
                     "javascript",
-                    "query",
                     "typescript",
                     "tsx",
+                    "query",
                     "php",
                     "yaml",
                     "html",
                     "css",
+                    "scss",
                     "markdown",
                     "markdown_inline",
                     "bash",
@@ -46,9 +35,41 @@ return {
                     "dockerfile",
                     "gitignore",
                     "astro",
+                    "sql",
+                    "toml",
+                    "xml",
+                    "regex",
+                    "gitcommit",
+                    "diff",
                 },
+
                 auto_install = false,
+
+                highlight = {
+                    enable = true,
+                },
+
+                indent = {
+                    enable = true,
+                },
+
+                -- Text Objects
+                textobjects = {
+                    select = {
+                        enable = true,
+                        lookahead = true,
+
+                        keymaps = {
+                            ["af"] = "@function.outer",
+                            ["if"] = "@function.inner",
+                        },
+                    },
+                },
             })
-        end
-    }
+
+            -- Auto close HTML/JSX tags
+            require("nvim-ts-autotag").setup()
+        end,
+    },
 }
+

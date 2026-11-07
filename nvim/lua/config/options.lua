@@ -4,7 +4,7 @@ vim.opt.expandtab = true      -- Replace TAB with spaces
 vim.opt.autoindent = true     -- Enable automatic indentation
 vim.opt.smarttab = true       -- Smart indentation
 vim.opt.smartindent = true    -- Smart indentation
-vim.opt.colorcolumn = "80"    -- Highlight column 80
+vim.opt.colorcolumn = "88"    -- Highlight column 80
 vim.g.vimtex_view_method = "zathura"
 vim.g.vimtex_compiler_method = "latexmk"
 

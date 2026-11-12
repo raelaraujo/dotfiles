@@ -22,7 +22,11 @@ return {
                 })
             end, {})
 
-            -- LSP Capabilities
+            -- LSP Capabilities (aplica a todos os servers)
+            vim.lsp.config("*", {
+                capabilities = capabilities,
+            })
+
             local servers = {
                 "lua_ls",
                 "pyright",
@@ -33,11 +37,8 @@ return {
                 "texlab",
             }
 
-            for _, server in ipairs(servers) do
-                vim.lsp.config(server, {
-                    capabilities = capabilities,
-                })
-            end
+            -- Garante que os servers sejam habilitados (Neovim 0.11+)
+            vim.lsp.enable(servers)
         end,
     },
 

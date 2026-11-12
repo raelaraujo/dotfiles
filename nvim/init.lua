@@ -8,4 +8,4 @@ vim.diagnostic.config({
     underline = false,
 })
 
-vim.cmd.colorscheme("monokai-pro")
+vim.cmd.colorscheme("tokyonight-night")

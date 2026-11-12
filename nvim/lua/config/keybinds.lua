@@ -1,6 +1,6 @@
 vim.g.mapleader = " "
 
-vim.keymap.set("n", "<keader>cd", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>cd", vim.cmd.Ex, { desc = "Open netrw" })
 
 local themes = {
     "dracula",
@@ -28,16 +28,4 @@ local function toggle_colorscheme()
     vim.cmd.colorscheme(next_theme)
 end
 
-vim.keymap.set("n", "<leader>tt", toggle_colorscheme, { desc = "switch colorscheme" })
-
-local function disabable_diagnostic()
-    vim.diagnostic.disable()
-end
-
-vim.keymap.set("n", "<leader>dd", disabable_diagnostic, { desc = "disable diagnostic" })
-
-local function enable_diagnostic()
-    vim.diagnostic.enable()
-end
-
-vim.keymap.set("n", "<leader>de", enable_diagnostic, { desc = "enable diagnostic" })
+vim.keymap.set("n", "<leader>tt", toggle_colorscheme, { desc = "Switch colorscheme" })

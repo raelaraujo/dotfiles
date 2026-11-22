@@ -78,7 +78,7 @@ return {
     -- image = { enabled = true },
 
     indent = {
-      enabled = true,
+      enabled = false,
       indent = { char = "│" },
       scope = { enabled = true },
     },

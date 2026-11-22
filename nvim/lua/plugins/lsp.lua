@@ -22,7 +22,7 @@ return {
                 })
             end, {})
 
-            -- LSP Capabilities (aplica a todos os servers)
+            -- LSP Capabilities
             vim.lsp.config("*", {
                 capabilities = capabilities,
             })
@@ -37,7 +37,6 @@ return {
                 "texlab",
             }
 
-            -- Garante que os servers sejam habilitados (Neovim 0.11+)
             vim.lsp.enable(servers)
         end,
     },

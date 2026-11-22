@@ -5,6 +5,7 @@ return {
           config = function()
             require('onedark').setup {
               style = 'deep',
+              -- transparent_background = true,
               -- colors = { bg0 = '#1d1d1d'},
             }
                 require('onedark').load()

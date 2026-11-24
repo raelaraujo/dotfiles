@@ -1,0 +1,127 @@
+[
+	{
+		"exclusive": true,
+		"passthrough": false,
+		"position": "top",
+		"reload_style_on_change": true,
+		"gtk-layer-shell": true,
+		"width": 1250,
+		"height": 54,
+		"layer": "top",
+		"margin-top": 10,
+		"mod": "dock",
+
+		"modules-left": [
+			"custom/padd",
+			"custom/l_end",
+			"tray",
+			"battery",
+			"cpu",
+			"memory",
+			"custom/r_end"
+		],
+
+		"modules-center": ["custom/l_end", "mpris", "custom/r_end"],
+
+		"modules-right": [
+			"custom/l_end",
+			"backlight",
+			"pulseaudio",
+			"pulseaudio#microphone",
+			"clock",
+			"custom/r_end",
+			"custom/padd"
+		],
+
+		"backlight": {
+			"device": "intel_backlight",
+			"format": "{icon} {percent}%",
+			"format-icons": ["", "", "", "", ""],
+			"min-length": 6,
+			"on-scroll-down": "brightnessctl set 1%-",
+			"on-scroll-up": "brightnessctl set 1%+",
+			"rotate": 0,
+			"tooltip": false
+		},
+		"cpu": {
+			"format": "󰍛 {usage}%",
+			"interval": 1,
+			"rotate": 0
+		},
+
+		"mpris": {
+			"interval": 1,
+			"max-length": 47
+		},
+
+		"tray": {
+			"icon-size": 18,
+			"rotate": 0,
+			"spacing": 10
+		},
+		"memory": {
+			"format": "󰾆 {used}GB",
+			"interval": 1,
+			"max-length": 10,
+			"rotate": 0,
+			"tooltip": false
+		},
+
+		"pulseaudio": {
+			"format": "{icon}  {volume}%",
+			"format-icons": {
+				"default": ["", "", ""],
+				"headphone": ""
+			},
+			"format-muted": "󰖁",
+			"on-click": "pavucontrol -t 3",
+			"rotate": 0,
+			"scroll-step": 5,
+			"tooltip-format": "{icon} {desc} // {volume}%"
+		},
+		"pulseaudio#microphone": {
+			"format": "{format_source}",
+			"format-source": " {volume}%",
+			"format-source-muted": "",
+			"on-click": "pavucontrol -t 4",
+			"scroll-step": 5,
+			"tooltip": false
+		},
+
+		"battery": {
+			"format": " {icon} {capacity}%",
+			"format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁"],
+			"format-plugged": "  {capacity}%",
+			"format-charging": "  {capacity}%",
+			"states": {
+				"critical": 20,
+				"good": 95,
+				"warning": 30
+			},
+			"tooltip": false
+		},
+
+		"clock": {
+			"format": " {:%H:%M:%S}",
+			"format-alt": "{:%a %d:%m}",
+			"interval": 1,
+			"rotate": 0,
+			"tooltip": false
+		},
+		"custom/l_end": {
+			"format": " ",
+			"interval": "once",
+			"tooltip": false
+		},
+		"custom/padd": {
+			"format": " ",
+			"interval": "once",
+			"tooltip": false
+		},
+		"custom/r_end": {
+			"format": " ",
+			"interval": "once",
+			"tooltip": false
+		}
+	}
+]

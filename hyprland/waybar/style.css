@@ -1,0 +1,78 @@
+* {
+	font-family: "JetBrainsMono Nerd Font";
+	font-weight: bold;
+	font-size: 13px;
+	min-height: 21px;
+}
+#waybar {
+	border: 4px solid #86afef;
+}
+window#waybar {
+	background: transparent;
+	border-radius: 12px;
+	box-shadow: none;
+}
+window#waybar > box {
+	background-color: #1e1e2e;
+	border: 2px solid #89b4fa;
+	border-radius: 12px;
+}
+tooltip {
+	background: #1b1e25;
+	border-radius: 8px;
+	border-width: 0px;
+}
+tooltip label {
+	font-size: 13px;
+	color: #86afef;
+}
+#temperature,
+#backlight,
+#cpu,
+#memory,
+#pulseaudio,
+#window,
+#mpris,
+#custom-l_end,
+#custom-r_end {
+	color: #86afef;
+	font-size: 14px;
+	/*background: #242830;*/
+	opacity: 1;
+	margin: 6px 0px 6px 0px;
+	padding-left: 4px;
+	padding-right: 4px;
+}
+
+#tray menu * {
+	color: #86afef;
+	background: #1b1e25;
+}
+#clock,
+#tray,
+#battery {
+	color: #86afef;
+	font-size: 14px;
+	/*background: #242830;*/
+	opacity: 1;
+	border: none;
+	border-radius: 6px;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#custom-r_end {
+	border-radius: 0px 5px 5px 0px;
+	margin-right: 8px;
+	padding-right: 0px;
+}
+
+#custom-l_end {
+	border-radius: 5px 0px 0px 5px;
+	margin-left: 8px;
+	padding-left: 0px;
+}

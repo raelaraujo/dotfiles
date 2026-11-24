@@ -29,7 +29,13 @@ return {
         "folke/tokyonight.nvim",
          lazy = false,
          priority = 1000,
-         opts = {},
+         opts = { 
+            transparent = false,
+            styles = {
+                sidebars = true,
+                floats = true,
+            }
+        },
     },
 
     {

@@ -43,6 +43,7 @@ hl.monitor({
 local terminal    = "kitty"
 local fileManager = "dolphin"
 local menu        = "wofi --show drun --allow-images"
+local scriptsDir  = (os.getenv("HOME") or "/home/rael-arch") .. "/.config/hypr/scripts"
 -- local menu        = "hyprlauncher"
 
 
@@ -55,10 +56,14 @@ local menu        = "wofi --show drun --allow-images"
 -- Autostart necessary processes (like notifications daemons, status bars, etc.)
 -- Or execute your favorite apps at launch like this:
 --
-hl.on("hyprland.start", function () 
+hl.on("hyprland.start", function ()
   hl.exec_cmd(terminal)
   hl.exec_cmd("nm-applet")
-  hl.exec_cmd("waybar & hyprpaper")
+  hl.exec_cmd("waybar")
+  hl.exec_cmd("hyprpaper")
+  hl.exec_cmd("swaync")
+  hl.exec_cmd("hypridle")
+  hl.exec_cmd("pgrep -f 'cliphist store' >/dev/null || wl-paste --watch cliphist store")
 end)
 
 
@@ -73,6 +78,7 @@ hl.env("HYPRCURSOR_SIZE", "24")
 hl.env("XDG_CURRENT_DESKTOP", "Hyprland")
 hl.env("XDG_SESSION_TYPE", "wayland")
 hl.env("XDG_SESSION_DESKTOP", "Hyprland")
+hl.env("HYPRSHOT_DIR", (os.getenv("HOME") or "/home/rael-arch") .. "/Pictures/Screenshots")
 hl.env("GDK_BACKEND", "wayland")
 hl.env("SDL_VIDEO_DRIVER", "wayland")
 
@@ -90,8 +96,8 @@ hl.env("SDL_VIDEO_DRIVER", "wayland")
 --   },
 -- })
 
--- hl.permission("/usr/(bin|local/bin)/grim", "screencopy", "allow")
--- hl.permission("/usr/(lib|libexec|lib64)/xdg-desktop-portal-hyprland", "screencopy", "allow")
+hl.permission("/usr/(bin|local/bin)/(grim|hyprshot|wf-recorder)", "screencopy", "allow")
+hl.permission("/usr/(lib|libexec|lib64)/xdg-desktop-portal-hyprland", "screencopy", "allow")
 -- hl.permission("/usr/(bin|local/bin)/hyprpm", "plugin", "allow")
 
 
@@ -292,6 +298,19 @@ hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
+
+-- lock screen and notifications
+hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
+hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("swaync-client --toggle-panel"))
+
+-- Clipboard
+hl.bind(mainMod .. " + SHIFT + V", hl.dsp.exec_cmd(scriptsDir .. "/clipboard-pick.sh"))
+hl.bind(mainMod .. " + SHIFT + C", hl.dsp.exec_cmd("wl-paste --primary 2>/dev/null | cliphist store"))
+
+-- Screenshots
+hl.bind("Print", hl.dsp.exec_cmd("hyprshot -m region"))
+hl.bind(mainMod .. " + Print", hl.dsp.exec_cmd("hyprshot -m output -m active"))
+hl.bind("CTRL + Print", hl.dsp.exec_cmd("hyprshot -m region -- swappy -f"))
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))

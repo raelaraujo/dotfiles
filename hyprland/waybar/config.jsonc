@@ -28,6 +28,7 @@
 			"backlight",
 			"pulseaudio",
 			"pulseaudio#microphone",
+			"custom/notifications",
 			"clock",
 			"custom/r_end",
 			"custom/padd"
@@ -101,6 +102,14 @@
 			"tooltip": false
 		},
 
+		"custom/notifications": {
+			"format": "{}",
+			"exec": "/home/rael-arch/.config/hypr/scripts/notifications.sh",
+			"interval": 5,
+			"on-click": "swaync-client --toggle-panel",
+			"on-click-right": "swaync-client --toggle-dnd",
+			"tooltip": false
+		},
 		"clock": {
 			"format": " {:%H:%M:%S}",
 			"format-alt": "{:%a %d:%m}",

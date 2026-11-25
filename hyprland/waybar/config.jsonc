@@ -14,7 +14,8 @@
 		"modules-left": [
 			"custom/padd",
 			"custom/l_end",
-			"tray",
+            "hyprland/workspaces",
+            "network",
 			"battery",
 			"cpu",
 			"memory",
@@ -25,6 +26,7 @@
 
 		"modules-right": [
 			"custom/l_end",
+            "bluetooth",
 			"backlight",
 			"pulseaudio",
 			"pulseaudio#microphone",
@@ -43,6 +45,7 @@
 			"rotate": 0,
 			"tooltip": false
 		},
+
 		"cpu": {
 			"format": "󰍛 {usage}%",
 			"interval": 1,
@@ -52,6 +55,27 @@
 		"mpris": {
 			"interval": 1,
 			"max-length": 47
+		},
+
+        "hyprland/workspaces": {
+            "format": "{icon}"
+        },
+
+        "network": {
+			"format-wifi": "",
+			"format-ethernet": "󰈀",
+			"format-disconnected": "󰖪",
+			"tooltip-format-wifi": "{essid} ({signalStrength}%)",
+			"on-click": "nm-connection-editor"
+		},
+
+        "bluetooth": {
+			"format": "",
+			"format-connected": "󰂱",
+			"format-disabled": "󰂲",
+			"tooltip-format-connected": "{device_enumerate}",
+			"tooltip-format-enumerate-connected": "{device_alias}",
+			"on-click": "blueman-manager"
 		},
 
 		"tray": {

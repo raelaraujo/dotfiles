@@ -82,6 +82,11 @@ hl.env("HYPRSHOT_DIR", (os.getenv("HOME") or "/home/rael-arch") .. "/Pictures/Sc
 hl.env("GDK_BACKEND", "wayland")
 hl.env("SDL_VIDEO_DRIVER", "wayland")
 
+hl.env("QT_AUTO_SCREEN_SCALE_FACTOR", "1")
+hl.env("QT_QPA_PLATFORM", "wayland")
+hl.env("QT_QPA_PLATFORMTHEME", "qt5ct")
+hl.env("GTK_THEME", "Arc-Dark")
+
 -----------------------
 ----- PERMISSIONS -----
 -----------------------

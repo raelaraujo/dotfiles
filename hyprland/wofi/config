@@ -1,0 +1,9 @@
+mode=drun
+allow_images=true
+image_size=24
+prompt=Apps...
+width=500
+height=350
+location=center
+insensitive=true
+show=drun

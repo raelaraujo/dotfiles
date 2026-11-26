@@ -49,7 +49,8 @@
 		"cpu": {
 			"format": "󰍛 {usage}%",
 			"interval": 1,
-			"rotate": 0
+			"rotate": 0,
+            "on-click": "kitty -e htop"
 		},
 
 		"mpris": {
@@ -88,7 +89,8 @@
 			"interval": 1,
 			"max-length": 10,
 			"rotate": 0,
-			"tooltip": false
+			"tooltip": false,
+            "on-click": "kitty -e htop"
 		},
 
 		"pulseaudio": {

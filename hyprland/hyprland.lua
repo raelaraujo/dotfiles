@@ -63,7 +63,9 @@ hl.on("hyprland.start", function ()
   hl.exec_cmd("hyprpaper")
   hl.exec_cmd("swaync")
   hl.exec_cmd("hypridle")
-  hl.exec_cmd("pgrep -f 'cliphist store' >/dev/null || wl-paste --watch cliphist store")
+
+   hl.exec_cmd("wl-paste --type image --watch cliphist store")
+   hl.exec_cmd("wl-paste --type text --watch cliphist store")
 end)
 
 
@@ -138,7 +140,7 @@ hl.config({
 
         -- Change transparency of focused and unfocused windows
         active_opacity   = 1.0,
-        inactive_opacity = 1.0,
+        inactive_opacity = 0.95,
 
         shadow = {
             enabled      = true,
